@@ -68,14 +68,19 @@
             border-bottom: 1px solid #333;
             padding-bottom: 5px;
         }
-        .stats-table {
+        .stats-table, .download-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-        .stats-table td {
+        .stats-table td, .download-table td, .download-table th {
             padding: 8px;
             border-bottom: 1px solid #222;
+        }
+        .download-table th {
+            color: #d4af37;
+            text-align: left;
+            border-bottom: 2px solid #333;
         }
         .stats-table td:first-child {
             font-weight: bold;
@@ -90,11 +95,24 @@
             color: #00ff00;
             font-weight: bold;
         }
-        ol {
+        .btn-download {
+            background-color: #d4af37;
+            color: #111;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+        .btn-download:hover {
+            background-color: #fff;
+        }
+        ol, ul {
             padding-left: 20px;
             color: #bbb;
         }
-        ol li {
+        ol li, ul li {
             margin-bottom: 5px;
         }
         footer {
@@ -133,7 +151,46 @@
                 <p>Don't forget to download our official system files (Patch) and register your account in the "Register" section.</p>
             </section>
 
-            <section id="features" style="margin-top: 30px;">
+            <!-- Download Section -->
+            <section id="download" style="margin-top: 40px;">
+                <h2>Download Files</h2>
+                <p>To connect and play on our server, you must download the official server patch and extract it into your Lineage 2 Interlude folder.</p>
+                
+                <table class="download-table">
+                    <thead>
+                        <tr>
+                            <th>File Description</th>
+                            <th>Size</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>L2 Gold Server Patch v1.0 (Required)</strong></td>
+                            <td>~20 MB</td>
+                            <td><a href="https://www.filemail.com/d/qmbzeqzvokadqcd" class="btn-download" target="_blank">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lineage 2 Interlude Game Client</td>
+                            <td>3.2 GB</td>
+                            <td><a href="https://lineage2.com" class="btn-download" target="_blank">Mirror 1</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 20px; background: #151515; padding: 15px; border: 1px solid #222;">
+                    <h3 style="margin-top: 0; font-size: 1.1em;">How to Install:</h3>
+                    <ol>
+                        <li>Download and install the clean Lineage 2 Interlude client.</li>
+                        <li>Download our <strong>L2 Gold Server Patch</strong>.</li>
+                        <li>Extract the contents of the archive into your main Lineage 2 directory.</li>
+                        <li>Replace all existing files if prompted.</li>
+                        <li>Run the game via <code>l2.exe</code> inside the <code>system</code> folder.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="features" style="margin-top: 40px;">
                 <h2>Custom Features & Gameplay</h2>
                 <p style="font-size: 0.8em; color: #666;">Published: 2008-10-12 | Author: Admin-Gold</p>
                 <ul>
@@ -147,7 +204,6 @@
         </main>
 
         <!-- Sidebar Area -->
-        <!-- User Intent: Context: L2GoldOldSchool website project | Constraints: lithuanian language, active voice, punchy fragments | Intent: provide fully translated english website code with server statistics -->
         <aside>
             <h3>Server Status</h3>
             <p><strong>L2 Gold Main:</strong> <span class="status-online">ONLINE</span></p>
