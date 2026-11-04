@@ -1,216 +1,49 @@
-/* General Layout & 2010 Style Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #0b0c10;
-    background-image: radial-gradient(circle, #1f2833 0%, #0b0c10 100%);
-    color: #c5a880; /* Classic L2 gold-ish text color */
-    font-family: 'Marcellus', serif;
-    font-size: 16px;
-    line-height: 1.6;
-    padding-bottom: 40px;
-}
-
-/* Header & Typography */
-header {
-    text-align: center;
-    padding: 60px 20px 40px 20px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
-    border-bottom: 2px solid #9A7B44;
-}
-
-.logo-area h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
-    color: #d4af37;
-    text-shadow: 0px 0px 15px rgba(212, 175, 55, 0.6), 3px 3px 0px #000;
-    letter-spacing: 5px;
-}
-
-.logo-area h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 2px #000;
-    letter-spacing: 8px;
-    margin-top: -5px;
-}
-
-.server-status {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px #000;
-}
-
-.status-online {
-    color: #00ffcc;
-    font-weight: bold;
-    text-shadow: 0 0 8px rgba(0, 255, 204, 0.8);
-}
-
-/* Navigation Bar */
-nav {
-    background: #12141c;
-    border-top: 1px solid #45351c;
-    border-bottom: 2px solid #9A7B44;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    display: block;
-    padding: 15px 25px;
-    color: #c5a880;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border-left: 1px solid #1a1d29;
-    border-right: 1px solid #1a1d29;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    background: #1f2331;
-    color: #d4af37;
-    text-shadow: 0 0 5px rgba(214, 175, 55, 0.5);
-}
-
-/* Content Container & Boxes */
-.container {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.box {
-    background: rgba(18, 20, 28, 0.85);
-    border: 2px solid #45351c;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7), inset 0 0 20px rgba(69, 53, 28, 0.3);
-    padding: 30px;
-    margin-bottom: 35px;
-    border-radius: 4px;
-    position: relative;
-}
-
-/* Old school corner borders simulation */
-.box::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: -2px; width: 10px; height: 10px;
-    border-top: 2px solid #d4af37; border-left: 2px solid #d4af37;
-}
-.box::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; right: -2px; width: 10px; height: 10px;
-    border-bottom: 2px solid #d4af37; border-right: 2px solid #d4af37;
-}
-
-.box-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #45351c;
-    padding-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Buttons */
-.download-buttons {
-    display: flex;
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.btn-gold {
-    flex: 1;
-    text-align: center;
-    background: linear-gradient(to bottom, #bd9334, #735418);
-    border: 1px solid #d4af37;
-    color: #fff;
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px #000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-    transition: transform 0.1s, filter 0.2s;
-    cursor: pointer;
-}
-
-.btn-gold:hover {
-    filter: brightness(1.2);
-    transform: translateY(-1px);
-}
-
-/* Tables (Rates) */
-.rates-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.rates-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #252936;
-}
-
-.rates-table tr:nth-child(even) {
-    background: rgba(255,255,255,0.02);
-}
-
-.rates-table td strong {
-    color: #d4af37;
-    font-size: 1.2rem;
-}
-
-/* Lists */
-.features-list {
-    list-style-position: inside;
-    list-style-type: square;
-}
-
-.features-list li, .connect-steps li {
-    margin-bottom: 12px;
-}
-
-.features-list strong, .connect-steps strong {
-    color: #ffffff;
-}
-
-.connect-steps {
-    padding-left: 20px;
-}
-
-code {
-    background: #000;
-    padding: 2px 6px;
-    color: #ffaa00;
-    font-family: monospace;
-    border-radius: 3px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    color: #555;
-    font-size: 0.85rem;
-    margin-top: 60px;
-    padding: 20px;
-    border-top: 1px solid #1a1d29;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L2Gold - Home</title>
+    <style>
+        body { background: #0d0d0d; color: #d4af37; font-family: sans-serif; margin: 0; padding: 20px; }
+        .nav { background: #1a1a1a; padding: 15px; text-align: center; border-bottom: 2px solid #d4af37; }
+        .nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .layout { display: flex; margin-top: 20px; gap: 20px; }
+        .sidebar { width: 250px; background: #111; padding: 15px; border: 1px solid #333; }
+        .sidebar h3 { border-bottom: 1px solid #d4af37; padding-bottom: 5px; color: #fff; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { padding: 8px 0; border-bottom: 1px solid #222; }
+        .sidebar a { color: #ccc; text-decoration: none; }
+        .content { flex: 1; background: #111; padding: 20px; border: 1px solid #333; }
+        .status { color: #00ff00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">Home</a> <a href="#">How to connect?</a> <a href="#">C6 Patch</a> <a href="#">Clans</a> <a href="#">Castles</a> <a href="#">Heroes</a>
+    </div>
+    <div class="layout">
+        <div class="sidebar">
+            <h3>Gameaccount</h3>
+            <ul><li><a href="#">Login</a></li><li><a href="#">Register</a></li></ul>
+            <h3>World info</h3>
+            <ul><li><a href="#">Clans & Allies</a></li><li><a href="#">Castles</a></li><li><a href="#">Heroes</a></li><li><a href="#">Raidbosses</a></li></ul>
+            <h3>Information</h3>
+            <ul><li><a href="#">General Info</a></li><li><a href="#">Rebirth Info</a></li><li><a href="#">Refining System</a></li></ul>
+            <h3>Server Status</h3>
+            <p>Gameserver: <span class="status">ONLINE</span></p>
+        </div>
+        <div class="content">
+            <h2>Server Is Now in Beta Mode – Join and Try It Out!</h2>
+            <p>Our L2Gold server is currently running in beta mode. Everyone is welcome to join and test.</p>
+            <h3>Server Information:</h3>
+            <ul>
+                <li><strong>Chronicles:</strong> Interlude (C6)</li>
+                <li><strong>Exp:</strong> x75 / <strong>SP:</strong> x50 / <strong>Adena:</strong> x50</li>
+                <li><strong>Safe Enchant:</strong> +3</li>
+                <li><strong>Max Enchant:</strong> +16</li>
+                <li><strong>Features:</strong> AIO NPC Buffer, Tattoos, Special Rebirth, Custom Zones</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
