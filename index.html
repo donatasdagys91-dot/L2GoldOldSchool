@@ -120,6 +120,7 @@
             font-size: 0.85em;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
         .btn-download:hover, .btn-submit:hover {
             background-color: #fff;
@@ -169,7 +170,8 @@
     <nav>
         <a href="#news">News</a>
         <a href="#register">Register</a>
-        <a href="#download">Download</a>
+        <!-- Šis mygtukas dabar iškart atidaro tavo failą naujame lange -->
+        <a href="https://filemail.com" target="_blank">Download</a>
         <a href="#forum">Forum</a>
     </nav>
 
@@ -205,8 +207,8 @@
                 </form>
             </section>
 
-            <!-- Download Section -->
-            <section id="download">
+            <!-- Download Section Info -->
+            <section id="download-info">
                 <h2>Download Files</h2>
                 <p>To connect and play on our server, you must download the official server patch and extract it into your Lineage 2 Interlude folder.</p>
                 
@@ -267,7 +269,3 @@
         <!-- Sidebar Area -->
         <aside>
             <h3>Server Status</h3>
-            <p><strong>L2 Gold Main:</strong> <span class="status-online">ONLINE</span></p>
-            <p><strong>Players Online:</strong> 2451</p>
-
-            <h3>Server Rates & Stats</h3>
