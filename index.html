@@ -1,368 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2Gold x45 - Interlude Custom Server</title>
+    <title>L2 Gold - The Legend Returns (2008 Classic)</title>
     <style>
-        :root {
-            --bg-dark: #0a0c10;
-            --bg-card: #131722;
-            --accent-gold: #c5a880;
-            --accent-gold-glow: rgba(197, 168, 128, 0.3);
-            --text-light: #e2e8f0;
-            --text-muted: #8a94a6;
-            --online-green: #10b981;
-            --danger-red: #ef4444;
-        }
-
-        * {
+        /* Bendras retro L2 stilius */
+        body {
+            background-color: #0b0a08;
+            background-image: radial-gradient(circle, #1a1610 0%, #050403 100%);
+            color: #d1c2a5;
+            font-family: 'Georgia', 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
         }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-dark) 70%);
-            line-height: 1.6;
-            padding-bottom: 3rem;
-        }
-
-        /* Top Header */
+        /* Viršutinis skydelis (Header) */
         header {
+            background: linear-gradient(to bottom, #110d06, #221a0f);
+            border-bottom: 2px solid #b39243;
             text-align: center;
-            padding: 3rem 1rem 1rem 1rem;
+            padding: 40px 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
         }
 
-        .server-logo {
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: var(--accent-gold);
-            text-shadow: 0 0 20px var(--accent-gold-glow);
+        header h1 {
+            color: #f7cd6d;
+            font-size: 3.5rem;
+            margin: 0;
             text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 0px #000, 0 0 20px #ffcc00;
         }
 
-        .server-subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin-top: 0.5rem;
+        header p {
+            color: #a3957a;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 5px;
         }
 
-        /* Grid buttons below logo */
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 1.5rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .promo-card {
-            background: linear-gradient(135deg, #1e2330 0%, #131722 100%);
-            border: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 1.2rem;
+        /* Navigacija */
+        nav {
+            background-color: #17120a;
+            border-bottom: 1px solid #4a3b1a;
             text-align: center;
-            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #d1c2a5;
             text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid transparent;
             transition: all 0.3s ease;
         }
 
-        .promo-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 10px var(--accent-gold-glow);
+        nav a:hover {
+            color: #f7cd6d;
+            background-color: #261f12;
+            border: 1px solid #b39243;
+            box-shadow: 0 0 10px rgba(247, 205, 109, 0.3);
         }
 
-        .promo-card h3 {
-            color: var(--accent-gold);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Top Navigation Menu */
-        nav {
-            background: rgba(19, 23, 34, 0.9);
-            border-top: 1px solid rgba(197, 168, 128, 0.1);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.9rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-gold);
-        }
-
-        /* THREE COLUMN CONTAINER STRUCTURE */
-        .main-container {
+        /* Pagrindinis išdėstymas (Layout) */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
             display: grid;
-            grid-template-columns: 260px 1fr 300px;
-            gap: 1.5rem;
-            max-width: 1300px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 20px;
+            padding: 0 20px;
         }
 
-        /* Sidebars Shared Class */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        /* Šoniniai skydeliai (Sidebars) */
+        aside {
+            background-color: #120e08;
+            border: 1px solid #3d3118;
+            padding: 15px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
         }
 
-        .widget {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 1.3rem;
-        }
-
-        .widget-title {
-            color: var(--accent-gold);
-            font-size: 1rem;
+        aside h3 {
+            color: #f7cd6d;
+            border-bottom: 1px solid #b39243;
+            padding-bottom: 8px;
+            margin-top: 0;
             text-transform: uppercase;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-            padding-bottom: 0.4rem;
+            font-size: 1.1rem;
             letter-spacing: 1px;
+            text-align: center;
         }
 
-        /* Status Widget elements */
-        .status-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.7rem;
-            font-size: 0.9rem;
+        /* Serverio statuso elementai */
+        .status-box {
+            text-align: center;
+            padding: 10px;
+            background: #1a140b;
+            border: 1px dashed #4a3b1a;
+            margin-bottom: 15px;
         }
 
-        .status-indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: var(--online-green);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--online-green);
+        .status-online {
+            color: #4cd137;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(76, 209, 55, 0.5);
         }
 
-        /* General Action Buttons */
-        .btn-action {
+        /* Turinys (Main content) */
+        main {
+            background-color: #14100a;
+            border: 1px solid #4a3b1a;
+            padding: 25px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+        }
+
+        .news-post {
+            border-bottom: 1px dashed #3d3118;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .news-post:last-child {
+            border-bottom: none;
+        }
+
+        .news-post h2 {
+            color: #f7cd6d;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #70644e;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        /* Sąrašai ir nuorodos */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .gold-button {
             display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #af9570 0%, #8c734b 100%);
+            background: linear-gradient(to bottom, #b39243, #735a22);
             color: #000;
             text-align: center;
-            padding: 0.6rem;
-            border: none;
-            border-radius: 4px;
+            padding: 10px;
             font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: opacity 0.3s;
-            margin-top: 0.8rem;
             text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        .btn-action:hover {
-            opacity: 0.9;
-        }
-
-        /* CENTER AREA */
-        .content-area {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 2rem;
-        }
-
-        .content-block {
-            margin-bottom: 2.5rem;
-        }
-
-        .content-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .content-block h2 {
-            font-size: 1.6rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 0.4rem;
-        }
-
-        .content-block p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .badge-beta {
-            background-color: var(--danger-red);
-            color: white;
-            padding: 0.15rem 0.5rem;
-            font-size: 0.75rem;
-            border-radius: 4px;
             text-transform: uppercase;
-            vertical-align: middle;
-            margin-left: 0.5rem;
-        }
-
-        /* Feature Blocks inside Centre Grid */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(197, 168, 128, 0.1);
-            padding: 1rem;
-            border-radius: 6px;
-        }
-
-        .feature-item h4 {
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-        }
-
-        .feature-item ul {
-            list-style: square;
-            margin-left: 1.1rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .important-box {
-            background: rgba(197, 168, 128, 0.04);
-            border-left: 4px solid var(--accent-gold);
-            padding: 1rem;
-            border-radius: 0 6px 6px 0;
-            margin-top: 1rem;
-        }
-
-        /* Ranking and Data Lists */
-        .rank-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            text-align: left;
-        }
-
-        .rank-table th {
-            color: var(--accent-gold);
-            padding-bottom: 0.4rem;
-            font-weight: normal;
-        }
-
-        .rank-table td {
-            padding: 0.4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-            color: var(--text-muted);
-        }
-
-        .rank-highlight {
-            color: var(--accent-gold) !important;
-            font-weight: bold;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            padding: 0.4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .info-list li span {
-            color: var(--text-light);
-            float: right;
-        }
-
-        .rates-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.4rem;
-            margin-top: 1rem;
-        }
-
-        .rate-badge {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 0.4rem;
-            text-align: center;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .rate-badge strong {
-            color: var(--accent-gold);
-        }
-
-        /* Modal Overlay Windows */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-gold);
-            padding: 2rem;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 380px;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 0.7rem;
-            right: 1rem;
-            font-size: 1.4rem;
-            color: var(--text-muted);
+            border: 1px solid #f7cd6d;
+            margin-bottom: 10px;
             cursor: pointer;
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(to bottom, #d9b352, #8c6e2b);
+            box-shadow: 0 0 10px #f7cd6d;
+        }
+
+        /* Puslapio apačia (Footer) */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #080705;
+            border-top: 1px solid #221a0f;
+            color: #594f3b;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        /* Pritaikymas telefonams */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                order: 2;
+            }
+            main {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Viršūnė -->
+    <header>
+        <h1>L2 GOLD</h1>
+        <p>The Most Famous Lineage 2 High Five / Interlude Server Since 2008</p>
+    </header>
+
+    <!-- Navigacija -->
+    <nav>
+        <a href="#news">Naujienos</a>
+        <a href="#register">Registracija</a>
+        <a href="#download">Atsisiųsti</a>
+        <a href="#statistika">Statistika</a>
+        <a href="#forum">Forumas</a>
+    </nav>
+
+    <!-- Pagrindinis langas -->
+    <div class="container">
+        
+        <!-- Kairysis šonas: Meniu ir siuntiniai -->
+        <aside>
+            <h3>Serveris</h3>
+            <a href="#" class="gold-button">Kurti Paskyrą</a>
+            <a href="#" class="gold-button">Atsisiųsti Patch</a>
+            
+            <h3 style="margin-top: 25px;">Informacija</h3>
+            <ul>
+                <li>Chronicle: Interlude</li>
+                <li>Rates: XP x45 / SP x45</li>
+                <li>Adena: x50</li>
+                <li>Drop/Spoil: x1</li>
+                <li>Safe Ench: +3</li>
+                <li>Max Ench: +25</li>
+            </ul>
+        </aside>
+
+        <!-- Centras: Naujienos -->
+        <main id="news">
+            <div class="news-post">
+                <h2>L2Gold Server Grand Opening!</h2>
+                <div class="news-date">Paskelbta: 2008-10-14 | Autorius: Admin-Gold</div>
+                <p>Sveiki atvykę į legendinį L2 Gold serverį! Pasiruoškite nepakartojamai kovai. Mūsų serveris siūlo unikalų balansą, custom ginklus (L2Gold Weapons), specialias pvp zonas ir stabilų veikimą be jokių trikdžių.</p>
+                <p>Nepamirškite atsisiųsti mūsų oficialaus sistemos failo (Patch) ir užsiregistruoti skiltyje „Kurti Paskyrą“.</p>
+            </div>
+
+            <div class="news-post">
+                <h2>Custom Įranga ir Aprašymas</h2>
+                <div class="news-date">Paskelbta: 2008-10-12 | Autorius: Admin-Gold</div>
+                <p>Mūsų serveryje rasite legendinius patobulinimus:</p>
+                <ul>
+                    <li><strong>L2Gold ginklai</strong> su specialiais efektais (SA).</li>
+                    <li>Automatinis „Buff“ laikas – 1 valanda.</li>
+                    <li>Subclass be patekimo užduoties (No Quest).</li>
+                    <li>Nobless gaunamas nužudžius Flame of Splendor Barakiel.</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Dešinysis šonas: Statusas ir Topai -->
+        <aside>
+            <h3>Statusas</h3>
+            <div class="status-box">
+                <div><strong>L2 Gold Main:</strong></div>
+                <div class="status-online">ONLINE</div>
+                <div style="font-size: 0.85rem; margin-top: 5px;">Žaidėjai: 2451</div>
+            </div>
+
+            <h3>Geriausi Žaidėjai</h3>
+            <ol style="padding-left: 20px; font-size: 0.9rem;">
+                <li><span style="color: #f7cd6d;">Kael</span> (78 Lvl)</li>
+                <li><span style="color: #d1c2a5;">DarkAvenger</span> (78 Lvl)</li>
+                <li><span style="color: #d1c2a5;">Sexygirl</span> (78 Lvl)</li>
+                <li><span style="color: #d1c2a5;">Vandal</span> (77 Lvl)</li>
+                <li><span style="color: #d1c2a5;">Arthas</span> (75 Lvl)</li>
+            </ol>
+        </aside>
+
+    </div>
+
+    <!-- Puslapio apačia -->
+    <footer>
+        &copy; 2008-2026 L2Gold.org / L2Gold.dc. Visos teisės saugomos.<br>
+        Ši svetainė sukurta remiantis nostalgija ir originaliu 2008 m. dizainu.
+    </footer>
+
+</body>
+</html>
