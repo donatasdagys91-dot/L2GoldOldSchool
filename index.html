@@ -20,7 +20,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cinzel', 'Segoe UI', serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -35,7 +35,6 @@
         header {
             text-align: center;
             padding: 4rem 1rem 2rem 1rem;
-            position: relative;
         }
 
         .server-logo {
@@ -67,7 +66,7 @@
         .promo-card {
             background: linear-gradient(135deg, #1e2330 0%, #131722 100%);
             border: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             border-radius: 8px;
             cursor: pointer;
@@ -83,14 +82,14 @@
 
         .promo-card h3 {
             color: var(--accent-gold);
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         /* Navigation Bar */
         nav {
-            background: rgba(19, 23, 34, 0.8);
+            background: rgba(19, 23, 34, 0.9);
             border-top: 1px solid rgba(197, 168, 128, 0.1);
             border-bottom: 1px solid rgba(197, 168, 128, 0.1);
             backdrop-filter: blur(10px);
@@ -156,7 +155,7 @@
             letter-spacing: 1px;
         }
 
-        /* Status & Server Stats */
+        /* Status Rows */
         .status-row {
             display: flex;
             justify-content: space-between;
@@ -194,7 +193,78 @@
             opacity: 0.9;
         }
 
-        /* Ranking Tables (PvP/PK) */
+        /* Central Content Area */
+        .content-area {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .badge-beta {
+            background-color: var(--danger-red);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+
+        .content-block h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-block p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Feature Showcases */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            padding: 1.2rem;
+            border-radius: 6px;
+        }
+
+        .feature-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .feature-item ul {
+            list-style: square;
+            margin-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .important-box {
+            background: rgba(197, 168, 128, 0.05);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Ranking Tables */
         .rank-table {
             width: 100%;
             border-collapse: collapse;
@@ -214,85 +284,12 @@
             color: var(--text-muted);
         }
 
-        .rank-table tr:hover td {
-            color: var(--text-light);
-        }
-
         .rank-highlight {
             color: var(--accent-gold) !important;
             font-weight: bold;
         }
 
-        /* Central Content Area */
-        .content-area {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .badge-beta {
-            background-color: var(--danger-red);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            vertical-align: middle;
-            margin-left: 0.5rem;
-        }
-
-        .content-block h2 {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .content-block p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        /* Feature Showcases (Weapons, Armor, Rebirth) */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(197, 168, 128, 0.1);
-            padding: 1.2rem;
-            border-radius: 6px;
-        }
-
-        .feature-item h4 {
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-
-        .feature-item ul {
-            list-style: square;
-            margin-left: 1.2rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .important-box {
-            background: rgba(197, 168, 128, 0.05);
-            border-left: 4px solid var(--accent-gold);
-            padding: 1.2rem;
-            border-radius: 0 8px 8px 0;
-        }
-
-        /* Info List Features */
+        /* Info List */
         .info-list {
             list-style: none;
         }
@@ -301,7 +298,7 @@
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .info-list li span {
@@ -320,14 +317,14 @@
             padding: 0.5rem;
             text-align: center;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .rate-badge strong {
             color: var(--accent-gold);
         }
 
-        /* Modal (Registration Form Popup) */
+        /* Modal Popup */
         .modal {
             display: none;
             position: fixed;
@@ -350,7 +347,6 @@
             width: 100%;
             max-width: 400px;
             position: relative;
-            box-shadow: 0 0 30px rgba(0,0,0,0.7);
         }
 
         .close-modal {
@@ -362,12 +358,12 @@
             cursor: pointer;
         }
 
-        .close-modal:hover {
-            color: #fff;
-        }
-
         .form-group {
             margin-bottom: 1.2rem;
         }
 
         .form-group label {
+            display: block;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
