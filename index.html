@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L2 Gold - The Legend Returns (OldSchool)</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background-color: #111;
             color: #ddd;
@@ -35,6 +38,12 @@
         nav {
             text-align: center;
             margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            background: #1c1c1c;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            z-index: 100;
         }
         nav a {
             color: #aaa;
@@ -62,11 +71,16 @@
             padding: 15px;
             border: 1px solid #2d2d2d;
             border-radius: 4px;
+            height: fit-content;
         }
         h2, h3 {
             color: #d4af37;
             border-bottom: 1px solid #333;
             padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h2:first-of-type {
+            margin-top: 0;
         }
         .stats-table, .download-table {
             width: 100%;
@@ -95,18 +109,37 @@
             color: #00ff00;
             font-weight: bold;
         }
-        .btn-download {
+        .btn-download, .btn-submit {
             background-color: #d4af37;
             color: #111;
-            padding: 5px 10px;
+            padding: 6px 12px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 3px;
             text-transform: uppercase;
             font-size: 0.85em;
+            border: none;
+            cursor: pointer;
         }
-        .btn-download:hover {
+        .btn-download:hover, .btn-submit:hover {
             background-color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 3px;
+            box-sizing: border-box;
         }
         ol, ul {
             padding-left: 20px;
@@ -137,13 +170,13 @@
         <a href="#news">News</a>
         <a href="#register">Register</a>
         <a href="#download">Download</a>
-        <a href="#stats">Statistics</a>
         <a href="#forum">Forum</a>
     </nav>
 
     <div class="content-wrapper">
         <!-- Main Content -->
         <main>
+            <!-- News Section -->
             <section id="news">
                 <h2>Server Grand Opening!</h2>
                 <p style="font-size: 0.8em; color: #666;">Published: 2008-10-14 | Author: Admin-Gold</p>
@@ -151,8 +184,29 @@
                 <p>Don't forget to download our official system files (Patch) and register your account in the "Register" section.</p>
             </section>
 
+            <!-- Register Section -->
+            <section id="register">
+                <h2>Create Account</h2>
+                <p>Fill out the form below to register your game account. This account will be used to log into the game server.</p>
+                <form style="max-width: 400px; background: #151515; padding: 20px; border: 1px solid #222; border-radius: 4px;">
+                    <div class="form-group">
+                        <label for="username">Account Name (Login):</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">Repeat Password:</label>
+                        <input type="password" id="repassword" required>
+                    </div>
+                    <button type="button" class="btn-submit" onclick="alert('Account creation feature requires a server backend connection. Auto-registration is currently active on the server login console.')">Create Account</button>
+                </form>
+            </section>
+
             <!-- Download Section -->
-            <section id="download" style="margin-top: 40px;">
+            <section id="download">
                 <h2>Download Files</h2>
                 <p>To connect and play on our server, you must download the official server patch and extract it into your Lineage 2 Interlude folder.</p>
                 
@@ -168,7 +222,7 @@
                         <tr>
                             <td><strong>L2 Gold Server Patch v1.0 (Required)</strong></td>
                             <td>~20 MB</td>
-                            <td><a href="https://www.filemail.com/d/qmbzeqzvokadqcd" class="btn-download" target="_blank">Download</a></td>
+                            <td><a href="https://filemail.com" class="btn-download" target="_blank">Download</a></td>
                         </tr>
                         <tr>
                             <td>Lineage 2 Interlude Game Client</td>
@@ -190,7 +244,14 @@
                 </div>
             </section>
 
-            <section id="features" style="margin-top: 40px;">
+            <!-- Forum Section -->
+            <section id="forum">
+                <h2>Community Forum</h2>
+                <p>Our official community forum is currently under maintenance. Join our community to discuss tactics, trade items, and find clan members.</p>
+                <p style="color: #888;">Expected opening: Coming Soon...</p>
+            </section>
+
+            <section id="features">
                 <h2>Custom Features & Gameplay</h2>
                 <p style="font-size: 0.8em; color: #666;">Published: 2008-10-12 | Author: Admin-Gold</p>
                 <ul>
@@ -210,38 +271,3 @@
             <p><strong>Players Online:</strong> 2451</p>
 
             <h3>Server Rates & Stats</h3>
-            <table class="stats-table">
-                <tr><td>Chronicle</td><td>Interlude</td></tr>
-                <tr><td>Experience (XP)</td><td>x45</td></tr>
-                <tr><td>Skill Points (SP)</td><td>x45</td></tr>
-                <tr><td>Adena Drop</td><td>x50</td></tr>
-                <tr><td>Items Drop / Spoil</td><td>x1</td></tr>
-                <tr><td>Safe Enchant</td><td>+3</td></tr>
-                <tr><td>Max Enchant</td><td>+25</td></tr>
-                <tr><td>Enchant Rate</td><td>Dynamic</td></tr>
-                <tr><td>Max Rebirths</td><td>3 Rebirths</td></tr>
-                <tr><td>Rebirth Level</td><td>78 Lvl</td></tr>
-                <tr><td>Rebirth Reward</td><td>100% Book / Skill</td></tr>
-                <tr><td>Custom Shop</td><td>Available</td></tr>
-                <tr><td>Buffer NPC</td><td>Full Buffs</td></tr>
-            </table>
-
-            <h3>Top Players</h3>
-            <ol>
-                <li>Kael (78 Lvl)</li>
-                <li>DarkAvenger (78 Lvl)</li>
-                <li>Sexygirl (78 Lvl)</li>
-                <li>Vandal (77 Lvl)</li>
-                <li>Arthas (75 Lvl)</li>
-            </ol>
-        </aside>
-    </div>
-
-    <footer>
-        <p>© 2008-2026 L2Gold.org / L2Gold.dc. All rights reserved.</p>
-        <p>This website is built based on nostalgia and the original 2008 design.</p>
-    </footer>
-</div>
-
-</body>
-</html>
