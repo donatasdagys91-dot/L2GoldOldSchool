@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2Gold x45 - Modern Fantasy Server</title>
+    <title>L2Gold x45 - Interlude Custom Server</title>
     <style>
         :root {
             --bg-dark: #0a0c10;
@@ -30,7 +30,7 @@
             line-height: 1.6;
         }
 
-        /* Viršutinis Logotipas ir Logotipas fonui */
+        /* Header & Logo */
         header {
             text-align: center;
             padding: 4rem 1rem 2rem 1rem;
@@ -53,7 +53,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Didieji Navigacijos Mygtukai (Atnaujinti Grafiniai Blokai) */
+        /* Promo Blocks */
         .promo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -87,10 +87,11 @@
             letter-spacing: 1px;
         }
 
-        /* Tekstinė Navigacijos Juosta */
+        /* Navigation Bar */
         nav {
             background: rgba(19, 23, 34, 0.8);
-            border-y: 1px solid rgba(197, 168, 128, 0.1);
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
             backdrop-filter: blur(10px);
             padding: 1rem;
             position: sticky;
@@ -119,7 +120,7 @@
             color: var(--accent-gold);
         }
 
-        /* Pagrindinis Išdėstymas (3 Stulpeliai) */
+        /* Main 3-Column Layout */
         .main-container {
             display: grid;
             grid-template-columns: 250px 1fr 300px;
@@ -129,7 +130,7 @@
             padding: 0 1.5rem;
         }
 
-        /* Šoniniai Blokai (Sidabars) */
+        /* Sidebars */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -153,7 +154,7 @@
             letter-spacing: 1px;
         }
 
-        /* Serverio Statusas */
+        /* Server Status */
         .status-row {
             display: flex;
             justify-content: space-between;
@@ -191,7 +192,7 @@
             opacity: 0.9;
         }
 
-        /* Centrinis Turinys */
+        /* Central Content Area */
         .content-area {
             background-color: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -236,7 +237,7 @@
             text-transform: uppercase;
         }
 
-        /* Informacijos Sąrašas (Dešinėje) */
+        /* Info Features List */
         .info-list {
             list-style: none;
         }
@@ -271,7 +272,7 @@
             color: var(--accent-gold);
         }
 
-        /* Puslapio Apačia */
+        /* Footer */
         footer {
             text-align: center;
             padding: 3rem;
@@ -281,7 +282,7 @@
             font-size: 0.85rem;
         }
 
-        /* Prisitaikymas ekranams */
+        /* Responsive Design */
         @media (max-width: 1024px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -297,51 +298,51 @@
 </head>
 <body>
 
-    <!-- Serverio Pavadinimas -->
+    <!-- Server Logo -->
     <header>
         <div class="server-logo">L2Gold</div>
-        <div class="server-subtitle">The Legacy Reborn • High Five / Interlude Custom</div>
+        <div class="server-subtitle">The Legacy Reborn • Interlude Custom Chronicle</div>
     </header>
 
-    <!-- Didieji Greiti Mygtukai -->
+    <!-- Top Promo Buttons -->
     <section class="promo-grid">
-        <a href="#" class="promo-card"><h3>Kaip prisijungti?</h3></a>
-        <a href="#" class="promo-card"><h3>C6 Atnaujinimas</h3></a>
-        <a href="#" class="promo-card"><h3>Klanai ir Aljansai</h3></a>
-        <a href="#" class="promo-card"><h3>Pilys</h3></a>
-        <a href="#" class="promo-card"><h3>Herojai</h3></a>
+        <a href="#" class="promo-card"><h3>How to connect?</h3></a>
+        <a href="#" class="promo-card"><h3>C6 Patch</h3></a>
+        <a href="#" class="promo-card"><h3>Clans & Allies</h3></a>
+        <a href="#" class="promo-card"><h3>Castles</h3></a>
+        <a href="#" class="promo-card"><h3>Heroes</h3></a>
     </section>
 
-    <!-- Navigacija -->
+    <!-- Main Navigation Bar -->
     <nav>
         <ul class="nav-links">
-            <li><a href="#" class="active">Pradžia</a></li>
-            <li><a href="#">Sukurti Vartotoją</a></li>
-            <li><a href="#">Prisijungti</a></li>
-            <li><a href="#">Informacija</a></li>
-            <li><a href="#">Komanda</a></li>
-            <li><a href="#">Taisyklės</a></li>
-            <li><a href="#">Pagalba</a></li>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Register Account</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">World Info</a></li>
+            <li><a href="#">Staff List</a></li>
+            <li><a href="#">Rules</a></li>
+            <li><a href="#">Live Chat</a></li>
         </ul>
     </nav>
 
-    <!-- Pagrindinis langas -->
+    <!-- Main Content Container -->
     <main class="main-container">
         
-        <!-- Kairysis stulpelis (Būsena ir Balsavimas) -->
+        <!-- Left Sidebar (Status & Voting) -->
         <aside class="sidebar">
             <div class="widget">
-                <h3 class="widget-title">Serverio Būsena</h3>
+                <h3 class="widget-title">Server Status</h3>
                 <div class="status-row">
-                    <span>Žaidimo serveris</span>
+                    <span>Gameserver</span>
                     <span class="status-indicator"></span>
                 </div>
                 <div class="status-row">
-                    <span>Prisijungimo serveris</span>
+                    <span>Authserver</span>
                     <span class="status-indicator"></span>
                 </div>
-                <button class="btn-action" onclick="location.reload()">Atnaujinti</button>
+                <button class="btn-action" onclick="location.reload()">Refresh</button>
             </div>
 
             <div class="widget">
-                <h3 class="widget-title">Balsavimas</h3>
+                <h3 class="widget-title">Vote Panel</h3>
