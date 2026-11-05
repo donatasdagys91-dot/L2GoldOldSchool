@@ -16,7 +16,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             background: #1c1c1c;
             padding: 20px;
@@ -48,7 +48,7 @@
         nav a {
             color: #aaa;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             font-weight: bold;
             text-transform: uppercase;
             border: 1px solid transparent;
@@ -83,19 +83,20 @@
         h2:first-of-type {
             margin-top: 0;
         }
-        .stats-table, .download-table {
+        .stats-table, .download-table, .items-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-        .stats-table td, .download-table td, .download-table th {
-            padding: 8px;
+        .stats-table td, .download-table td, .download-table th, .items-table td, .items-table th {
+            padding: 10px;
             border-bottom: 1px solid #222;
         }
-        .download-table th {
+        .download-table th, .items-table th {
             color: #d4af37;
             text-align: left;
             border-bottom: 2px solid #333;
+            font-size: 0.9em;
         }
         .stats-table td:first-child {
             font-weight: bold;
@@ -127,29 +128,20 @@
             background-color: #fff;
             color: #111;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #aaa;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            background: #222;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
         ol, ul {
             padding-left: 20px;
             color: #bbb;
         }
         ol li, ul li {
             margin-bottom: 5px;
+        }
+        .item-grade {
+            background: #222;
+            color: #ffaa00;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
         }
         footer {
             text-align: center;
@@ -172,9 +164,9 @@
     <nav>
         <a href="#news">News</a>
         <a href="#register">Register</a>
-        <!-- Viršutinis mygtukas taip pat nukreipia į naują nuorodą -->
-        <a href="https://1drv.ms/u/c/5633f531050d52bf/IQCnZvnqMlkrR7CzjGeV0cgaAVgXUrE5mLwPaKboO5Cl8TE?e=bcafud" target="_blank" rel="noopener noreferrer">Download</a>
-        <a href="#forum">Forum</a>
+        <a href="#custom-items">Custom Items</a>
+        <a href="https://1drv.ms" target="_blank" rel="noopener noreferrer">Download</a>
+        <a href="https://discord.gg" target="_blank" style="color: #7289da;">Our Discord (Forum)</a>
     </nav>
 
     <div class="content-wrapper">
@@ -185,65 +177,73 @@
                 <h2>Server Grand Opening!</h2>
                 <p style="font-size: 0.8em; color: #666;">Published: 2008-10-14 | Author: Admin-Gold</p>
                 <p>Welcome to the legendary L2 Gold server! Prepare for an unparalleled battle. Our server offers unique balance, custom weapons (L2Gold Weapons), special PvP zones, and stable performance without any disruptions.</p>
-                <p>Don't forget to download our official system files (Patch) and register your account in the "Register" section.</p>
+                <p>Don't forget to download our official system files (Patch) and register your account using Auto-Registration inside the game client.</p>
             </section>
 
             <!-- Register Section -->
             <section id="register">
-                <h2>Create Account</h2>
-                <p>Fill out the form below to register your game account. This account will be used to log into the game server.</p>
-                <form style="max-width: 400px; background: #151515; padding: 20px; border: 1px solid #222; border-radius: 4px;">
-                    <div class="form-group">
-                        <label for="username">Account Name (Login):</label>
-                        <input type="text" id="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="repassword">Repeat Password:</label>
-                        <input type="password" id="repassword" required>
-                    </div>
-                    <button type="button" class="btn-submit" onclick="alert('Account creation feature requires a server backend connection. Auto-registration is currently active on the server login console.')">Create Account</button>
-                </form>
+                <h2>Account Registration</h2>
+                <div style="background: #222; padding: 15px; border-left: 4px solid #d4af37; border-radius: 4px; margin-bottom: 20px;">
+                    <p style="margin: 0; color: #fff; font-weight: bold;">ℹ️ Auto-Registration is Enabled!</p>
+                    <p style="margin: 5px 0 0 0; color: #aaa; font-size: 0.9em;">You don't need to create an account on the website. Just run the game client, type your desired account name and password in the login screen, and it will be created automatically!</p>
+                </div>
             </section>
 
-            <!-- Download Section Info -->
-            <section id="download-info">
-                <h2>Download Files</h2>
-                <p>To connect and play on our server, you must download the official server patch and extract it into your Lineage 2 Interlude folder.</p>
+            <!-- Custom Items Section -->
+            <section id="custom-items">
+                <h2>Custom L2 Gold Weapons & Items</h2>
+                <p>Our server features the iconic L2 Gold custom weapon progression system. Check out the top-tier items and how to get them below:</p>
                 
-                <table class="download-table">
+                <table class="items-table">
                     <thead>
                         <tr>
-                            <th>File Description</th>
-                            <th>Size</th>
-                            <th>Action</th>
+                            <th>Item Icon & Name</th>
+                            <th>Grade</th>
+                            <th>Special Effect (SA) & Description</th>
+                            <th>How to Obtain</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- 1. Aura Bird Spellsword -->
                         <tr>
-                            <td><strong>L2 Gold Server Patch v1.0 (Required)</strong></td>
-                            <td>~20 MB</td>
-                            <!-- NAUJA NUORODA ĮKELTA ČIA -->
-                            <td><a href="https://1drv.ms/u/c/5633f531050d52bf/IQCnZvnqMlkrR7CzjGeV0cgaAVgXUrE5mLwPaKboO5Cl8TE?e=bcafud" class="btn-download" target="_blank" rel="noopener noreferrer">Download</a></td>
+                            <td style="vertical-align: middle; display: flex; align-items: center; gap: 10px;">
+                                <img src="L2Gold.png" alt="L2Gold" style="width: 24px; height: 24px; border: 1px solid #333; border-radius: 3px;">
+                                <strong>Aura Bird Spellsword</strong>
+                            </td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td>
+                                <span style="color: #fff; font-weight: bold;">Acumen / Empower</span><br>
+                                <span style="color: #aaa; font-size: 0.85em;">Legendary one-handed mage sword. Grants massive Casting Speed and Magic Attack power. Perfectly suited for Necromancer and Sorcerer classes.</span>
+                            </td>
+                            <td>Rebirth King Manager Swap</td>
                         </tr>
+
+                        <!-- 2. Dreadbane Duals -->
                         <tr>
-                            <td>Lineage 2 Interlude Game Client</td>
-                            <td>3.2 GB</td>
-                            <td><a href="https://lineage2.com" class="btn-download" target="_blank" rel="noopener noreferrer">Mirror 1</a></td>
+                            <td style="vertical-align: middle; display: flex; align-items: center; gap: 10px;">
+                                <img src="L2Gold.png" alt="L2Gold" style="width: 24px; height: 24px; border: 1px solid #333; border-radius: 3px;">
+                                <strong>Dreadbane Dual Swords</strong>
+                            </td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td>
+                                <span style="color: #fff; font-weight: bold;">Haste / Health (+25% HP)</span><br>
+                                <span style="color: #aaa; font-size: 0.85em;">Powerful dual swords designed for Gladiators and Bladedancers. Increases maximum health points (HP) and boosts attack speed.</span>
+                            </td>
+                            <td>High-tier Craft & Token exchange</td>
                         </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
 
-    <footer>
-        <p>&copy; 2008-2026 L2 Gold. All rights reserved. Lineage II is a trademark of NCSOFT Corporation.</p>
-    </footer>
-</div>
+                        <!-- 3. Mind's Eye Bow -->
+                        <tr>
+                            <td style="vertical-align: middle; display: flex; align-items: center; gap: 10px;">
+                                <img src="L2Gold.png" alt="L2Gold" style="width: 24px; height: 24px; border: 1px solid #333; border-radius: 3px;">
+                                <strong>Mind's Eye Bow</strong>
+                            </td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td>
+                                <span style="color: #fff; font-weight: bold;">Cheap Shot / Focus</span><br>
+                                <span style="color: #aaa; font-size: 0.85em;">Top-tier custom bow with an enhanced critical strike rate. Perfectly balanced for fast-paced PvP farm zones.</span>
+                            </td>
+                            <td>Drop from Custom Raid Bosses</td>
+                        </tr>
 
-</body>
-</html>
+                        <!-- 4. Heaven's Divider -->
